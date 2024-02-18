@@ -7,7 +7,6 @@ export PATH=${PATH}:/usr/local/mysql-8.0.32-macos13-arm64/bin
 #source /opt/homebrew/share/antigen/antigen.zsh
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzshwiki/Themes
@@ -16,7 +15,7 @@ ZSH_THEME=""
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search sudo )
 source $ZSH/oh-my-zsh.sh 
 alias givepassword='security find-generic-password -wa'
-alias f="fastfetch && todolist"
+alias n="neofetch && todolist"
 alias ipaddress='ifconfig | grep -A 5 en0 | grep "inet " | cut -f2 -d " "' # User configuration export MANPATH="/usr/local/man:$MANPATH"
 alias moo="cowsay I use Macos btw"
 alias kys="sudo shutdown -h now"
@@ -31,8 +30,6 @@ alias code='neovide'
 
 export PATH=/opt/homebrew/anaconda3/bin:$PATH
 
-
-
 export PATH=$PATH:/Users/amer/.spicetify
 emulate sh -c 'source ~/.profile'
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
@@ -44,3 +41,6 @@ function brew() {
     sketchybar --trigger brew_update
   fi
 }
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+

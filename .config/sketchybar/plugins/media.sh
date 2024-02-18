@@ -16,3 +16,4 @@ case "$SENDER" in
   "media_change") update_media
   ;;
 esac
+
