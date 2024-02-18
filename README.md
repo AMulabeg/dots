@@ -5,4 +5,4 @@ The bar is called Sketchybar, which is highly customizable. My current setup is 
 
 As for my text editor, I use Neovim and Tmux (Neovim has its own repository).
 My terminal is Wezterm
-![Screenshot 2024-02-15 at 15 37 50](https://github.com/AMulabeg/dots/assets/114394694/b9b9a42c-155b-465c-9f43-793c96a778af)
+<img width="1680" alt="Screenshot 2024-02-18 at 01 33 44" src="https://github.com/AMulabeg/dots/assets/114394694/2ab154bb-e29c-4e14-a2c4-51efd7f3c8db">
