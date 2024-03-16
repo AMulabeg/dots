@@ -28,4 +28,16 @@ yabai -m signal --add event=window_focused action="sketchybar --trigger window_f
 yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
 yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
 
-yabai -m rule --add app="^Raycast$" manage=off
+#yabai -m signal --add event=window_destroyed \
+#  action="${functions[focus_under_cursor]}"
+#yabai -m signal --add event=window_minimized \
+#  action="${functions[focus_under_cursor]}"
+#yabai -m signal --add event=application_hidden \
+#  action="${functions[focus_under_cursor]}"
+
+#function focus_under_cursor {
+#  if yabai -m query --windows --space |
+#      jq -er 'map(select(.focused == 1)) | length == 0' >/dev/null; then
+#    yabai -m window --focus mouse 2>/dev/null || true
+#  fi
+yabai -m rule --add app="Visual Studio Code" opacity=0.7
