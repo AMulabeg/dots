@@ -5,7 +5,6 @@ lcmd - l : yabai -m window --focus east
 lcmd - s: yabai -m display --focus west
 lcmd - g: yabai -m display --focus east
 
-
 ctrl + shift - j : yabai -m display --focus south
 ctrl + shift - k : yabai -m display --focus north
 ctrl + shift - l : yabai -m display --focus east
