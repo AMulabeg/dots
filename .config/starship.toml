@@ -1,5 +1,6 @@
+
 format = """
-[$directory](bold cyan)($git_branch$git_state$git_status$git_metrics)
+[$directory](bold cyan)($git_branch$git_state$git_status$git_metrics$nodejs$rust$golang$php$c$python$kotlin$java$zig)
 $time $hostname $username [»](bold green) """
 
 [git_branch]
@@ -13,22 +14,55 @@ format = ' ([\[$conflicted$deleted$renamed$modified$staged$untracked$ahead_behin
 [directory]
 style = "bold cyan"
 truncate_to_repo = false
-truncation_length = 1
-fish_style_pwd_dir_length = 1
+# truncation_length = 1
+ fish_style_pwd_dir_length = 1
+
+
+[golang]
+format = "([( $symbol ($version) )]($style))"
+style = "bg:#24283b bold fg:#7dcfff"
+symbol = "󰟓"
+
+[java]
+format = "([( $symbol ($version) )]($style))"
+style = "bg:#24283b bold fg:#ff9e64"
+symbol = ""
+
+[kotlin]
+format = "([( $symbol ($version) )]($style))"
+style = "bg:#24283b bold fg:#bb9af7"
+symbol = ""
+
+[nix_shell]
+format = "$state"
+impure_msg = "[  Impure ](bg:#272d40 bold fg:#bb9af7)"
+pure_msg = "[  Pure ](bg:#272d40 bold fg:#769ff0)"
+
+[nodejs]
+format = "([( $symbol ($version) )]($style))"
+style = "bg:#24283b bold fg:#7BD88F"
+symbol = ""
+
+[php]
+format = "([( $symbol ($version) )]($style))"
+style = "bg:#24283b bold fg:#769ff0"
+symbol = ""
 
 [python]
-scan_for_pyfiles = false
+format = "([( $symbol ($version) )]($style))"
+style = "bg:#24283b bold fg:#7bd88f"
+symbol = "󰌠"
 
-[ruby]
-disabled = true
+[rust]
+format = "([( $symbol ($version) )]($style))"
+style = "bg:#24283b bold fg:#FF9E64"
+symbol = ""
 
-[swift]
-disabled = true
+[zig]
+format = "([( $symbol ($version) )]($style))"
+style = "bg:#24283b bold fg:#ff9e64"
+symbol = ""
 
-[hostname]
-ssh_only = false
-format = "[$hostname]($style)"
-style = "bold white"
 
 [username]
 show_always = true
