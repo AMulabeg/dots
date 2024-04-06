@@ -18,7 +18,7 @@ shift + lcmd - y : yabai -m space --mirror y-axis
 shift + lcmd - x : yabai -m space --mirror x-axis
 
 # toggle window float
-shift + lcmd - t : yabai -m window --toggle float --grid 4:4:1:1:2:2 
+# shift + lcmd - t : yabai -m window --toggle float --grid 4:4:1:1:2:2 
 shift + lcmd - m : yabai -m window --toggle zoom-fullscreen
 
 # balance out tree of windows (resize to occupy same area)
