@@ -45,3 +45,5 @@ shift + lcmd - 4 : yabai -m window --space 4;
 shift + lcmd - 5 : yabai -m window --space 5;
 shift + lcmd - 6 : yabai -m window --space 6;
 shift + lcmd - 7 : yabai -m window --space 7;
+ 
+

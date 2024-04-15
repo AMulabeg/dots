@@ -28,7 +28,7 @@ alias moo="cowsay I use Macos btw"
 alias kys="sudo shutdown -h now"
 unalias ls
 alias vim="nvim"
-alias ls="eza" 
+alias ls="lsd" 
 alias todolist='ultralist list'
 alias c='clear'
 alias ':q'='nyancat'
