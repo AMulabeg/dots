@@ -6,9 +6,11 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.color_scheme = "Sakura"
-
-config.window_background_opacity = 0.80
+-- config.color_scheme = "Dracula"
+config.color_scheme = "OneDark (base16)"
+-- sakura for when using transparent background
+config.window_background_opacity = 1
+-- 0.80
 config.window_frame = {
 
 	font_size = 40.0,

@@ -10,29 +10,28 @@ export PATH=/Users/amer/.local/bin:$PATH
 export PATH=${PATH}:/usr/local/mysql-8.0.32-macos13-arm64/bin
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
-export ZSH="$HOME/.oh-my-zsh"
+eval "$(fzf --zsh)"
 
 # Themes if I need them
-ZSH_THEME=""
+# source ~/scripts/git.plugin.zsh
+source ~/scripts/zsh-autosuggestions
+source ~/scripts/zsh-syntax-highlighting
+source ~/scripts/sudo.plugin.zsh
+source ~/scripts/fzf-tab
 
 # Plugins
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search sudo )
-
-source $ZSH/oh-my-zsh.sh 
-
 # Aliases
 alias givepassword='security find-generic-password -wa'
 alias n="neofetch && todolist && echo '100 Euros Save, 50 Food, 50 Fun/Cards'"
 alias ipaddress='ifconfig | grep -A 5 en0 | grep "inet " | cut -f2 -d " "' # User configuration export MANPATH="/usr/local/man:$MANPATH"
 alias moo="cowsay I use Macos btw"
 alias kys="sudo shutdown -h now"
-unalias ls
 alias vim="nvim"
-alias ls="lsd" 
 alias todolist='ultralist list'
 alias c='clear'
 alias ':q'='nyancat'
 alias b="brew"
+alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 
 # Other
 [ -f "/Users/amer/.ghcup/env" ] && source "/Users/amer/.ghcup/env" # ghcup-envexport PATH=/opt/homebrew/anaconda3/bin:/usr/local/anaconda3/bin:/Users/amer/.local/bin:/Users/amer/bin:/usr/local/bin:.:/Users/amer/.local/bin:/Users/amer/bin:/usr/local/bin:.:/opt/homebrew/bin:/opt/homebrew/sbin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/TeX/texbin:/Applications/VMware Fusion.app/Contents/Public:/usr/local/share/dotnet:~/.dotnet/tools:/Users/amer/Library/Application Support/JetBrains/Toolbox/scripts:/usr/local/mysql-8.0.32-macos13-arm64/bin:/usr/local/mysql-8.0.32-macos13-arm64/bin >> ~/.zshrc
@@ -49,4 +48,32 @@ function brew() {
   fi
 }
 
+# -- Use fd instead of fzf --
+
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+
+# Use fd (https://github.com/sharkdp/fd) for listing path candidates.
+# - The first argument to the function ($1) is the base path to start traversal
+# - See the source code (completion.{bash,zsh}) for the details.
+_fzf_compgen_path() {
+  fd --hidden --exclude .git . "$1"
+}
+
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type=d --hidden --exclude .git . "$1"
+}
+# --- setup fzf theme ---
+fg="#CBE0F0"
+bg="#011628"
+bg_highlight="#143652"
+purple="#B388FF"
+blue="#06BCE4"
+cyan="#2CF9ED"
+export FZF_DEFAULT_OPTS='--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4'
+# ----- Bat (better cat) -----
+
+export BAT_THEME=tokyonight_night
 
