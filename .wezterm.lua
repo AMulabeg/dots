@@ -7,9 +7,10 @@ if wezterm.config_builder then
 end
 
 -- config.color_scheme = "Dracula"
-config.color_scheme = "OneDark (base16)"
+-- config.color_scheme = "OneDark (base16)"
+config.color_scheme = "Night Owl (Gogh)"
 -- sakura for when using transparent background
-config.window_background_opacity = 1
+config.window_background_opacity = 0.95
 -- 0.80
 config.window_frame = {
 
@@ -20,4 +21,5 @@ config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = true
 config.window_decorations = "RESIZE"
 --test
+
 return config

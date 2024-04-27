@@ -21,21 +21,23 @@ source ~/scripts/fzf-tab/fzf-tab.plugin.zsh
 source ~/scripts/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source ~/scripts/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source ~/scripts/sudo.plugin.zsh
+emulate sh -c 'source ~/.profile'
 # Plugins
 # Aliases
 alias givepassword='security find-generic-password -wa'
-alias n="neofetch && todolist && echo '100 Euros Save, 50 Food, 50 Fun/Cards'"
+alias n="neofetch --ascii_distro arch && todolist"
 alias ipaddress='ifconfig | grep -A 5 en0 | grep "inet " | cut -f2 -d " "' # User configuration export MANPATH="/usr/local/man:$MANPATH"
 alias moo="cowsay I use Macos btw"
 alias kys="sudo shutdown -h now"
 alias vim="nvim"
 alias todolist='ultralist list'
-alias c='clear'
 alias ':q'='nyancat'
 alias b="brew"
 alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias oo="cd ~/Documents/Obsidian Vault"
+alias "pirates"="ani-cli one piece"
 # ---- UltraList ----
- alias u="ultralist"
+alias u="ultralist"
 alias uc="ultralist l due:agenda group:context"
 alias up="ultralist l due:agenda group:project"
 alias tod="ultralist l group:project due:tod"
@@ -95,4 +97,4 @@ export FZF_DEFAULT_OPTS='--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f
 export BAT_THEME=tokyonight_night
 unsetopt BEEP
 # ----- Work -----
-todolist
+c

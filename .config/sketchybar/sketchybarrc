@@ -18,12 +18,16 @@ ITEM_DIR="$CONFIG_DIR/items"
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
 sketchybar --bar height=33        \
-                 blur_radius=30   \
+                 blur_radius=20   \
                  position=top     \
                  sticky=on      \
-                 padding_left=20  \
-                 padding_right=20 \
-                 color=$BAR_COLOR
+                 padding_left=10 \
+                 padding_right=10 \
+                 color=$BAR_COLOR\
+                     margin=10\
+                     corner_radius=8\
+                     y_offset=4
+
 
 ##### Changing Defaults #####
 # We now change some default values that are applied to all further items
@@ -35,14 +39,15 @@ sketchybar --default icon.font="SF Pro:Semibold:15.0"  \
                      label.font="SF Pro:Semibold:15.0" \
                      label.color=$WHITE                \
                      background.color=$ITEM_BG_COLOR       \
-                     background.corner_radius=5            \
-                     background.height=24                  \
+                     background.corner_radius=8            \
+                     background.height=22                  \
                      padding_left=5                        \
                      padding_right=5                       \
                      label.padding_left=4                  \
                      label.padding_right=10                \
                      icon.padding_left=10                  \
                      icon.padding_right=4
+                    
 
 # -- Left Side Items --
 source $ITEM_DIR/spaces.sh

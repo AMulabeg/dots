@@ -10,7 +10,6 @@ ctrl + shift - k : yabai -m display --focus north
 ctrl + shift - l : yabai -m display --focus east
 ctrl + shift - h : yabai -m display --focus west
 shift + lcmd - r : yabai -m space --rotate 270
-
 # flip along y-axis
 shift + lcmd - y : yabai -m space --mirror y-axis
 
@@ -18,7 +17,7 @@ shift + lcmd - y : yabai -m space --mirror y-axis
 shift + lcmd - x : yabai -m space --mirror x-axis
 
 # toggle window float
-# shift + lcmd - t : yabai -m window --toggle float --grid 4:4:1:1:2:2 
+shift + rcmd - t : yabai -m window --toggle float --grid 5:5:3:3:4:4 
 shift + lcmd - m : yabai -m window --toggle zoom-fullscreen
 
 # balance out tree of windows (resize to occupy same area)
@@ -45,5 +44,5 @@ shift + lcmd - 4 : yabai -m window --space 4;
 shift + lcmd - 5 : yabai -m window --space 5;
 shift + lcmd - 6 : yabai -m window --space 6;
 shift + lcmd - 7 : yabai -m window --space 7;
- 
+
 
