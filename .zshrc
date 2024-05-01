@@ -13,29 +13,27 @@ eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(fzf --zsh)"
 
-# Themes if I need them
-# source ~/scripts/git.plugin.zsh
-
+# Plugins
 autoload -U compinit; compinit
 source ~/scripts/fzf-tab/fzf-tab.plugin.zsh
 source ~/scripts/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source ~/scripts/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source ~/scripts/sudo.plugin.zsh
 emulate sh -c 'source ~/.profile'
-# Plugins
 # Aliases
 alias givepassword='security find-generic-password -wa'
-alias n="neofetch --ascii_distro arch && todolist"
 alias ipaddress='ifconfig | grep -A 5 en0 | grep "inet " | cut -f2 -d " "' # User configuration export MANPATH="/usr/local/man:$MANPATH"
 alias moo="cowsay I use Macos btw"
 alias kys="sudo shutdown -h now"
 alias vim="nvim"
 alias todolist='ultralist list'
+alias n="neofetch && todolist"
 alias ':q'='nyancat'
 alias b="brew"
 alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 alias oo="cd ~/Documents/Obsidian Vault"
 alias "pirates"="ani-cli one piece"
+alias "reveal:yuzu_location"="echo Sanski Most"
 # ---- UltraList ----
 alias u="ultralist"
 alias uc="ultralist l due:agenda group:context"

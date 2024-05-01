@@ -4,5 +4,6 @@ nvim/
 .config/.DS_STORE
 scripts/zsh-syntax-highlighting 
 scripts/
+NeoCat/
 
 
