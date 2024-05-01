@@ -2,8 +2,6 @@ nvim/
 .config/tmux/plugins
 .DS_STORE
 .config/.DS_STORE
-scripts/zsh-syntax-highlighting 
-scripts/
 NeoCat/
 
 
