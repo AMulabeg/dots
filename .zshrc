@@ -14,8 +14,9 @@ eval "$(zoxide init --cmd cd zsh)"
 eval "$(fzf --zsh)"
 
 # Plugins
-autoload -U compinit; compinit
+
 source ~/scripts/fzf-tab/fzf-tab.plugin.zsh
+
 source ~/scripts/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source ~/scripts/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source ~/scripts/sudo.plugin.zsh
@@ -25,7 +26,6 @@ alias givepassword='security find-generic-password -wa'
 alias ipaddress='ifconfig | grep -A 5 en0 | grep "inet " | cut -f2 -d " "' # User configuration export MANPATH="/usr/local/man:$MANPATH"
 alias moo="cowsay I use Macos btw"
 alias kys="sudo shutdown -h now"
-alias vim="nvim"
 alias todolist='ultralist list'
 alias n="neofetch && todolist"
 alias ':q'='nyancat'
@@ -49,6 +49,8 @@ alias c="ultralist l completed:tod"
 
 # pipe ultralist into fzf for ultra-fast searching of tasks!
 alias uf="script -c \"ultralist l\"  < /dev/null | fzf --ansi"
+alias fsb='~/scripts/fsb.sh'
+alias fshow='~/scripts/fshow.sh'
 
 # Other
 [ -f "/Users/amer/.ghcup/env" ] && source "/Users/amer/.ghcup/env" # ghcup-envexport PATH=/opt/homebrew/anaconda3/bin:/usr/local/anaconda3/bin:/Users/amer/.local/bin:/Users/amer/bin:/usr/local/bin:.:/Users/amer/.local/bin:/Users/amer/bin:/usr/local/bin:.:/opt/homebrew/bin:/opt/homebrew/sbin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/TeX/texbin:/Applications/VMware Fusion.app/Contents/Public:/usr/local/share/dotnet:~/.dotnet/tools:/Users/amer/Library/Application Support/JetBrains/Toolbox/scripts:/usr/local/mysql-8.0.32-macos13-arm64/bin:/usr/local/mysql-8.0.32-macos13-arm64/bin >> ~/.zshrc
@@ -82,15 +84,12 @@ _fzf_compgen_path() {
 _fzf_compgen_dir() {
   fd --type=d --hidden --exclude .git . "$1"
 }
+source ~/fzf-git.sh
 # --- setup fzf theme ---
-fg="#CBE0F0"
-bg="#011628"
-bg_highlight="#143652"
-purple="#B388FF"
-blue="#06BCE4"
-cyan="#2CF9ED"
-export FZF_DEFAULT_OPTS='--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4'
-# ----- Bat (better cat) -----
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796 \
+--color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
+--color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796"
 
 export BAT_THEME=tokyonight_night
 unsetopt BEEP
