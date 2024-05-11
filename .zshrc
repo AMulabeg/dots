@@ -46,6 +46,7 @@ alias wed="ultralist l group:project due:wed"
 alias thu="ultralist l group:project due:thu"
 alias fri="ultralist l group:project due:fri"
 alias c="ultralist l completed:tod"
+alias s='sesh connect $(sesh list | fzf)'
 
 # pipe ultralist into fzf for ultra-fast searching of tasks!
 alias uf="script -c \"ultralist l\"  < /dev/null | fzf --ansi"
