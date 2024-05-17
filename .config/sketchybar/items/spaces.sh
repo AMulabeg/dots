@@ -8,7 +8,7 @@ do
              --set space.$sid space=$sid                                 \
                               icon=$sid                                  \
                               label.font="sketchybar-app-font:Regular:16.0" \
-                              label.padding_right=4                   \
+                              label.padding_right=5                 \
                               label.y_offset=-1                          \
                               script="$PLUGIN_DIR/space.sh"              
 done
@@ -16,7 +16,7 @@ done
 sketchybar --add item space_separator left                             \
            --set space_separator icon="􀆊"                                \
                                  # icon.color=$ACCENT_COLOR \
-                                 # icon.padding_left=4                   \
+                                 icon.padding_left=5                  \
                                  label.drawing=off                     \
                                  background.drawing=off                \
                                  script="$PLUGIN_DIR/space_windows.sh" \
