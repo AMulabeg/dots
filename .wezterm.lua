@@ -10,7 +10,7 @@ end
 -- config.color_scheme = "OneDark (base16)"
 config.color_scheme = "Night Owl (Gogh)"
 -- sakura for when using transparent background
--- config.window_background_opacity = 0.80
+config.window_background_opacity = 0.80
 -- 0.80
 config.window_frame = {
 
