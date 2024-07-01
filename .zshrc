@@ -30,7 +30,6 @@ source ~/scripts/fzf-git.sh
 
 
 # Aliases
-alias rebuild=" darwin-rebuild switch --flake  ~/.config/nix-darwin#snow"
 
 alias givepassword='security find-generic-password -wa'
 alias ipaddress='ifconfig | grep -A 5 en0 | grep "inet " | cut -f2 -d " "' # User configuration export MANPATH="/usr/local/man:$MANPATH"
@@ -38,13 +37,11 @@ alias moo="cowsay I use Macos btw"
 alias kys="sudo shutdown -h now"
 alias todolist='ultralist list'
 alias n="neofetch && todolist"
-alias ':q'='nyancat'
 alias b="brew"
 alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 alias oo="cd ~/Documents/Obsidian Vault"
 alias "pirates"="ani-cli one piece"
-alias "reveal:yuzu_location"="echo Sanski Most"
-
+alias y="yazi"
 # ---- UltraList ----
 alias u="ultralist"
 alias uc="ultralist l due:agenda group:context"

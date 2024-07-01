@@ -10,12 +10,11 @@ end
 -- config.color_scheme = "OneDark (base16)"
 config.color_scheme = "Night Owl (Gogh)"
 -- sakura for when using transparent background
-config.window_background_opacity = 0.80
+config.window_background_opacity = 0.95
 -- 0.80
-config.window_frame = {
+config.font_size = 18
 
-	font_size = 40.0,
-}
+config.window_frame = {}
 wezterm.font("SF Mono", { weight = "Medium", stretch = "Normal", style = "Normal" }) -- /Library/Fonts/SF-Mono-Medium.otf, CoreText
 
 config.hide_tab_bar_if_only_one_tab = true

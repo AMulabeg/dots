@@ -1,18 +1,18 @@
 
 format = """
-[$directory](bold purple)($git_branch$git_state$git_status$git_metrics$nodejs$rust$golang$php$c$python$kotlin$java$zig)
-$time $hostname $username [»](bold purple) """
+[$directory](bold blue)($git_branch$git_state$git_status$git_metrics$nodejs$rust$golang$php$c$python$kotlin$java$zig)
+$time $hostname $username [»](bold blue) """
 
 [git_branch]
-style = "bold green"
-format = "[\\[[$symbol$branch$tag](bold green)\\]](bold white)"
+style = "bold blue"
+format = "[\\[[$symbol$branch$tag](bold blue)\\]](bold white)"
 symbol = "\ue725 "
 
 [git_status]
 format = ' ([\[$conflicted$deleted$renamed$modified$staged$untracked$ahead_behind\]]($style))'
 
 [directory]
-style = "bold purple"
+style = "bold blue"
 truncate_to_repo = false
 # truncation_length = 1
  fish_style_pwd_dir_length = 1
@@ -71,6 +71,7 @@ format = "[$user]($style)"
 
 [time]
 disabled = false
+style = "bold blue"
 format = "[$time]($style)"
 time_format = "%H:%M"
 
