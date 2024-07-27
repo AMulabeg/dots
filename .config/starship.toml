@@ -1,77 +1,164 @@
+[aws]
+symbol = "  "
 
-format = """
-[$directory](bold blue)($git_branch$git_state$git_status$git_metrics$nodejs$rust$golang$php$c$python$kotlin$java$zig)
-$time $hostname $username [»](bold blue) """
+[buf]
+symbol = " "
 
-[git_branch]
-style = "bold blue"
-format = "[\\[[$symbol$branch$tag](bold blue)\\]](bold white)"
-symbol = "\ue725 "
+[c]
+symbol = " "
 
-[git_status]
-format = ' ([\[$conflicted$deleted$renamed$modified$staged$untracked$ahead_behind\]]($style))'
+[conda]
+symbol = " "
+
+[crystal]
+symbol = " "
+
+[dart]
+symbol = " "
 
 [directory]
-style = "bold blue"
-truncate_to_repo = false
-# truncation_length = 1
- fish_style_pwd_dir_length = 1
+read_only = " 󰌾"
 
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[fennel]
+symbol = " "
+
+[fossil_branch]
+symbol = " "
+
+[git_branch]
+symbol = " "
 
 [golang]
-format = "([( $symbol ($version) )]($style))"
-style = "bg:#24283b bold fg:#7dcfff"
-symbol = "󰟓"
+symbol = " "
+
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[hostname]
+ssh_symbol = " "
 
 [java]
-format = "([( $symbol ($version) )]($style))"
-style = "bg:#24283b bold fg:#ff9e64"
-symbol = ""
+symbol = " "
+
+[julia]
+symbol = " "
 
 [kotlin]
-format = "([( $symbol ($version) )]($style))"
-style = "bg:#24283b bold fg:#bb9af7"
-symbol = ""
+symbol = " "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = "󰍛 "
+
+[meson]
+symbol = "󰔷 "
+
+[nim]
+symbol = "󰆥 "
 
 [nix_shell]
-format = "$state"
-impure_msg = "[  Impure ](bg:#272d40 bold fg:#bb9af7)"
-pure_msg = "[  Pure ](bg:#272d40 bold fg:#769ff0)"
+symbol = " "
 
 [nodejs]
-format = "([( $symbol ($version) )]($style))"
-style = "bg:#24283b bold fg:#7BD88F"
-symbol = ""
+symbol = " "
+
+[ocaml]
+symbol = " "
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
+
+[package]
+symbol = "󰏗 "
+
+[perl]
+symbol = " "
 
 [php]
-format = "([( $symbol ($version) )]($style))"
-style = "bg:#24283b bold fg:#769ff0"
-symbol = ""
+symbol = " "
+
+[pijul_channel]
+symbol = " "
 
 [python]
-format = "([( $symbol ($version) )]($style))"
-style = "bg:#24283b bold fg:#7bd88f"
-symbol = "󰌠"
+symbol = " "
+
+[rlang]
+symbol = "󰟔 "
+
+[ruby]
+symbol = " "
 
 [rust]
-format = "([( $symbol ($version) )]($style))"
-style = "bg:#24283b bold fg:#FF9E64"
-symbol = ""
+symbol = " "
+
+[scala]
+symbol = " "
+
+[swift]
+symbol = " "
 
 [zig]
-format = "([( $symbol ($version) )]($style))"
-style = "bg:#24283b bold fg:#ff9e64"
-symbol = ""
-
-
-[username]
-show_always = true
-style_user = "bold white"
-format = "[$user]($style)"
-
-[time]
-disabled = false
-style = "bold blue"
-format = "[$time]($style)"
-time_format = "%H:%M"
-
+symbol = " "
