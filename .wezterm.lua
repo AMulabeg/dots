@@ -6,11 +6,8 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
--- config.color_scheme = "Dracula"
--- config.color_scheme = "OneDark (base16)"
 config.color_scheme = "Night Owl (Gogh)"
--- sakura for when using transparent background
-config.window_background_opacity = 0.95
+-- config.window_background_opacity = 0.95
 -- 0.80
 config.font_size = 18
 
@@ -20,6 +17,5 @@ wezterm.font("SF Mono", { weight = "Medium", stretch = "Normal", style = "Normal
 config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = true
 config.window_decorations = "RESIZE"
---test
 
 return config

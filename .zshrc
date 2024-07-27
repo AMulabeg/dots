@@ -1,9 +1,9 @@
 export EDITOR="nvim"
-
-if [[ -f "/opt/homebrew/bin/brew" ]] then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
-
+#
+# if [[ -f "/opt/homebrew/bin/brew" ]] then
+#   eval "$(/opt/homebrew/bin/brew shellenv)"
+# fi
+#
 tmux="TERM=screen-256color-bce tmux"
 
 export PATH=$HOME/bin:/usr/local/bin:.:$PATH
@@ -12,11 +12,9 @@ export PATH=${PATH}:/usr/local/mysql-8.0.32-macos13-arm64/bin
 export PATH=/opt/homebrew/anaconda3/bin:$PATH
 export PATH=$PATH:/Users/amer/.spicetify
 
-# eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/spaceship.json)"
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(fzf --zsh)"
-
 # Plugins
 source ~/scripts/fzf-tab/fzf-tab.plugin.zsh
 source ~/scripts/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
@@ -36,7 +34,7 @@ alias ipaddress='ifconfig | grep -A 5 en0 | grep "inet " | cut -f2 -d " "' # Use
 alias moo="cowsay I use Macos btw"
 alias kys="sudo shutdown -h now"
 alias todolist='ultralist list'
-alias n="neofetch && todolist"
+alias f="fastfetch"
 alias b="brew"
 alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 alias oo="cd ~/Documents/Obsidian Vault"
@@ -55,7 +53,7 @@ alias thu="ultralist l group:project due:thu"
 alias fri="ultralist l group:project due:fri"
 alias c="ultralist l completed:tod"
 alias s='sesh connect $(sesh list | fzf)'
-
+alias rebuild=" darwin-rebuild switch --flake ~/.config/nix-darwin#snow"
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
@@ -141,4 +139,4 @@ function zle-line-init() {
 zle -N zle-line-init
 export BAT_THEME=tokyonight_night
 unsetopt BEEP
-c
+cal
