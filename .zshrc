@@ -11,8 +11,8 @@ export PATH=/Users/amer/.local/bin:$PATH
 export PATH=${PATH}:/usr/local/mysql-8.0.32-macos13-arm64/bin
 export PATH=/opt/homebrew/anaconda3/bin:$PATH
 export PATH=$PATH:/Users/amer/.spicetify
-
-eval "$(starship init zsh)"
+#eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
+ eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(fzf --zsh)"
 # Plugins
@@ -80,14 +80,6 @@ alias uf="script -c \"ultralist l\"  < /dev/null | fzf --ansi"
 emulate sh -c 'source ~/.profile'
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
-# Autoupdate
-function brew() {
-  command brew "$@" 
-
-  if [[ $* =~ "upgrade" ]] || [[ $* =~ "update" ]] || [[ $* =~ "outdated" ]]; then
-    sketchybar --trigger brew_update
-  fi
-}
 
 #  Use fd instead of fzf 
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
@@ -140,3 +132,4 @@ zle -N zle-line-init
 export BAT_THEME=tokyonight_night
 unsetopt BEEP
 cal
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"

@@ -5,8 +5,8 @@ local config = {}
 if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
-
-config.color_scheme = "Night Owl (Gogh)"
+config.color_scheme = "Tokyo Night Moon"
+-- config.color_scheme = "Night Owl (Gogh)"
 -- config.window_background_opacity = 0.95
 -- 0.80
 config.font_size = 18

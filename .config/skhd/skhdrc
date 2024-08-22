@@ -62,6 +62,5 @@ shift + lcmd - 7 : yabai -m window --space 7;
 
 
 cmd - return : open -na /Applications/WezTerm.app
-rctrl - f : open -na /Applications/Firefox.app/
-rctrl - d : open -na /Applications/Discord.app/
+
 
