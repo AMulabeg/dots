@@ -131,5 +131,4 @@ function zle-line-init() {
 zle -N zle-line-init
 export BAT_THEME=tokyonight_night
 unsetopt BEEP
-cal
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"

@@ -20,7 +20,7 @@ sketchybar --default updates=when_shown \
       label.color=0xffCAD3F5 \
       background.corner_radius=5 background.height=40
 
-SPACE_ICONS=("󰈹" "󰅭" "󰖣" "󰙯" "󰓇")
+SPACE_ICONS=("1" "2" "3" "4" "5")
 SPACES=()
 
 for i in "${!SPACE_ICONS[@]}"; do
