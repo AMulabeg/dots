@@ -1,4 +1,5 @@
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
 sudo yabai --load-sa
 sudo nvram boot-args=-arm64e_preview_abi
 
@@ -20,7 +21,6 @@ yabai -m config mouse_follows_focus on
 yabai -m config mouse_modifier alt
 yabai -m config mouse_action1 move
 yabai -m config mouse_action2 resize
-
 yabai -m config focus_follows_mouse autofocus
 
 # focus window after active space changes
@@ -34,13 +34,8 @@ yabai -m signal --add event=window_focused action="sketchybar --trigger window_f
 yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
 yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
 
-yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
-yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+#yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+#yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 
-yabai -m signal --add event=window_destroyed \
-  action="${functions[focus_under_cursor]}"
-yabai -m signal --add event=window_minimized \
-  action="${functions[focus_under_cursor]}"
-yabai -m signal --add event=application_hidden \
-  action="${functions[focus_under_cursor]}"
-
+yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus recent || yabai -m window --focus first"
+yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus recent || yabai -m window --focus first"
