@@ -11,8 +11,9 @@ export PATH=/Users/amer/.local/bin:$PATH
 export PATH=${PATH}:/usr/local/mysql-8.0.32-macos13-arm64/bin
 export PATH=/opt/homebrew/anaconda3/bin:$PATH
 export PATH=$PATH:/Users/amer/.spicetify
+export PATH=$PATH:/Users/amer/.cargo/bin
 #eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
- eval "$(starship init zsh)"
+eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(fzf --zsh)"
 # Plugins
@@ -132,3 +133,4 @@ zle -N zle-line-init
 export BAT_THEME=tokyonight_night
 unsetopt BEEP
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+pokeget gengar

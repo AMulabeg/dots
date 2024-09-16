@@ -58,12 +58,13 @@ source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/sound.sh"
 source "$ITEM_DIR/wifi.sh"
 source "$ITEM_DIR/cpu.sh"
-sketchybar --add item cat center \
-           --set cat icon="≽^•⩊•^≼"\
-                     icon.font="$ICON_FONT:Regular:18.0" \
-                     icon.color=$DARK_WHITE\
-                     label.draw=off
-
-
+source $ITEM_DIR/vpn.sh
+# sketchybar --add item cat center \
+#            --set cat icon="≽^•⩊•^≼"\
+#                      icon.font="$ICON_FONT:Regular:18.0" \
+#                      icon.color=$DARK_WHITE\
+#                      label.draw=off
+#
+#
 sketchybar --update
 
