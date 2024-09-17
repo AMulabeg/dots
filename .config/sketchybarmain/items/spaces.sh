@@ -1,23 +1,40 @@
 #!/bin/bash
 
-SPACE_SIDS=(1 2 3 4 5 6 7 8 9 10)
+SPACE_ICONS=("~" "1" "2" "3" "4" "5" "6")
 
-for sid in "${SPACE_SIDS[@]}"
+# SPACE_ICONS=("~" "1:􀩼" "2:􀎬" "3:􀷾" "4:􀓕" "5:􀌤" "6:􀑪" "7" "8" "9")
+
+SPACE=(
+  icon.padding_left=18
+  icon.padding_right=18
+  label.padding_right=33
+  icon.color=$WHITE
+  icon.font="$FONT:ExtraBold:14.0"
+  icon.highlight_color=$SKY
+  icon.background.draw=on
+  background.padding_left=-8
+  background.padding_right=-8
+  background.color=$BG_SEC_COLR
+  background.corner_radius=10
+  background.drawing=on
+  label.drawing=off
+  script="$PLUGIN_DIR/space.sh"
+)
+
+sid=0
+for i in "${!SPACE_ICONS[@]}"
 do
-  sketchybar --add space space.$sid left                                 \
-             --set space.$sid space=$sid                                 \
-                              icon=$sid                                  \
-                              label.font="sketchybar-app-font:Regular:16.0" \
-                              label.padding_right=5                 \
-                              label.y_offset=-1                          \
-                              script="$PLUGIN_DIR/space.sh"              
+  sid=$(($i+1))
+  sketchybar --add space space.$sid left
+  sketchybar --set space.$sid associated_space=$sid
+  sketchybar --set space.$sid icon=${SPACE_ICONS[i]}
+  sketchybar --set space.$sid "${SPACE[@]}"
 done
-#add item if you need to add a space separator
-sketchybar --add item space_separator left                             \
-           --set space_separator icon="􀆊"                                \
-                                 # icon.color=$ACCENT_COLOR \
-                                 icon.padding_left=5                  \
-                                 label.drawing=off                     \
-                                 background.drawing=off                \
-                                 script="$PLUGIN_DIR/space_windows.sh" \
-           --subscribe space_separator space_windows_change                           
+
+sketchybar --add item space_separator_left left \
+           --set space_separator_left icon= \
+                                 icon.font="$FONT:Bold:16.0" \
+                                 background.padding_left=16 \
+                                 background.padding_right=10 \
+                                 label.drawing=off \
+                                 icon.color=$DARK_WHITE

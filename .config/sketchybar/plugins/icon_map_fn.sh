@@ -34,7 +34,7 @@ function icon_map() {
   "Joplin")
     icon_result=":joplin:"
     ;;
-  "Discord" | "Discord Canary" | "Discord PTB" | "Vesktop")
+  "Discord" | "Discord Canary" | "Discord PTB")
     icon_result=":discord:"
     ;;
   "Logseq")
@@ -154,7 +154,7 @@ function icon_map() {
   "Final Cut Pro")
     icon_result=":final_cut_pro:"
     ;;
-  "Chromium" | "Google Chrome" | "Google Chrome Canary" | "Thorium")
+  "Chromium" | "Google Chrome" | "Google Chrome Canary")
     icon_result=":google_chrome:"
     ;;
   "GitHub Desktop")
@@ -429,7 +429,7 @@ function icon_map() {
     ;;
   esac
 }
-
 icon_map "$1"
 
 echo "$icon_result"
+

@@ -1,76 +1,70 @@
 #!/bin/bash
 
-source "$CONFIG_DIR/colors.sh" # Loads all defined colors
+DIR="$HOME/.config/sketchybar/"
+ITEM_DIR="$DIR/items"
+PLUGIN_DIR="$DIR/plugins"
 
-# This is a demo config to show some of the most important commands more easily.
-# This is meant to be changed and configured, as it is intentionally kept sparse.
-# For a more advanced configuration example see my dotfiles:
-# https://github.com/FelixKratz/dotfiles
+FONT="JetBrainsMono Nerd Font"
+ICON_FONT="SF Pro"
 
-PLUGIN_DIR="$CONFIG_DIR/plugins"
-ITEM_DIR="$CONFIG_DIR/items"
+PADDING=6
 
-##### Bar Appearance #####
-# Configuring the general appearance of the bar, these are only some of the
-# options available. For all options see:
-# https://felixkratz.github.io/SketchyBar/config/bar
-# If you are looking for other colors, see the color picker:
-# https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
+source "$DIR/colors.sh"
+source "$DIR/icons.sh"
 
-sketchybar --bar height=36  \
-                 blur_radius=20   \
-                 position=top     \
-                 sticky=on      \
-                 padding_left=10 \
-                 padding_right=10 \
-                 color=$BAR_COLOR\
-                      margin=10\
-                      corner_radius=8\
-                      y_offset=4
-                      
-                     
-##### Changing Defaults #####
-# We now change some default values that are applied to all further items
-# For a full list of all available item properties see:
-# https://felixkratz.github.io/SketchyBar/config/items
+BAR_PROPS=(
+  height=32
+  color=$BG_PRI_COLR
+  shadow=off
+  position=top
+  sticky=on
+  padding_right=15
+  padding_left=15
+  corner_radius=10
+  y_offset=6
+  margin=6
+  blur_radius=30
+  notch_width=0
+)
 
-sketchybar --default icon.font="SF Pro:Semibold:15.0"  \
-                     icon.color=$WHITE                 \
-                     label.font="SF Pro:Semibold:15.0" \
-                     label.color=$WHITE                \
-                     background.color=$ITEM_BG_COLOR       \
-                     background.corner_radius=5            \
-                     background.height=22                  \
-                     padding_left=5                        \
-                     padding_right=5                       \
-                     label.padding_left=4                  \
-                     label.padding_right=10                \
-                     icon.padding_left=10                  \
-                     icon.padding_right=4
-                    
+DEF_PROPS=(
+  updates=when_shown
+  icon.font="$ICON_FONT:Regular:16.0"
+  icon.color=$WHITE
+  icon.padding_left=10
+  icon.padding_right=2
+  label.font="$FONT:Bold:14.0"
+  label.color=$WHITE
+  label.padding_left=$PADDING
+  label.padding_right=10
+  background.color=$BG_PRI_COLOR
+  background.padding_right=$PADDING
+  background.padding_left=$PADDING
+  background.height=22
+  background.corner_radius=8
+)
 
-# E V E N T S
-source $ITEM_DIR/spaces.sh
-source $ITEM_DIR/front_app.sh
+sketchybar --bar "${BAR_PROPS[@]}"
+sketchybar --default "${DEF_PROPS[@]}"
 
-# -- Center--
-# source $ITEM_DIR/media.sh
-#
+# -- LEFT Side Items --
+source "$ITEM_DIR/apple.sh"
+source "$ITEM_DIR/spaces.sh"
+source "$ITEM_DIR/front_app.sh"
 
-
-# -- Right Side Items --
-source $ITEM_DIR/calendar.sh
-source $ITEM_DIR/volume.sh
- source $ITEM_DIR/battery.sh
-source $ITEM_DIR/power.sh
-source $ITEM_DIR/cpu.sh
+# -- RIGHT Side Items -- 
+source "$ITEM_DIR/time.sh"
+source "$ITEM_DIR/battery.sh"
+source "$ITEM_DIR/sound.sh"
+source "$ITEM_DIR/wifi.sh"
+source "$ITEM_DIR/cpu.sh"
 source $ITEM_DIR/vpn.sh
-
-
-##### Finalizing Setup #####
-# The below command is only needed at the end of the initial configuration to
-# force all scripts to run the first time, it should never be run in an item script.
-
-
-sketchybar --hotload true
+# sketchybar --add item cat center \
+#            --set cat icon="≽^•⩊•^≼"\
+#                      icon.font="$ICON_FONT:Regular:18.0" \
+#                      icon.color=$DARK_WHITE\
+#                      label.draw=off
+#
+#
 sketchybar --update
+

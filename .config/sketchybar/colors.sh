@@ -1,25 +1,44 @@
 #!/bin/bash
 
+export WHITE=0xffffffff
 
-export ROSEWATER=0xFFf5e0dc #f5e0dc
-export FLAMINGO=0xFFf2cdcd #f2cdcd
-export PINK=0xFFf5c2e7 #f5c2e7
-export MAUVE=0xFFcba6f7 #cba6f7
-export RED=0xFFf38ba8 #f38ba8
-export MAROON=0xFFeba0ac #eba0ac
-export PEACH=0xFFfab387 #fab387
-export YELLOW=0xFFf9e2af #f9e2af
-export GREEN=0xFFa6e3a1 #a6e3a1
-export TEAL=0xFF94e2d5 #94e2d5
-export SKY=0xFF89dceb #89dceb
-export SAPPHIRE=0xFF74c7ec #74c7ec
-export BLUE=0xFF89b4fa #89b4fa
-export LAVENDER=0xFFb4befe #b4befe
+# -- Teal Scheme --
+export BAR_COLOR=0xff001f30
+export ITEM_BG_COLOR=0xff003547
+export ACCENT_COLOR=0xff2cf9ed
 
-export WHITE=0xFFcdd6f4 #cdd6f4 
-export DARK_WHITE=0xFF9399b2  #9399b2
+# -- Gray Scheme --
+# export BAR_COLOR=0xff101314
+# export ITEM_BG_COLOR=0xff353c3f
+# export ACCENT_COLOR=0xffffffff
 
-export BG_PRI_COLR=0xEE1e1e2e #1e1e2e
-export BG_SEC_COLR=0xFF313244 #313244
+# -- Purple Scheme --
+# export BAR_COLOR=0xff140c42
+# export ITEM_BG_COLOR=0xff2b1c84
+# export ACCENT_COLOR=0xffeb46f9
+
+# -- Red Scheme ---
+# export BAR_COLOR=0xff23090e
+# export ITEM_BG_COLOR=0xff591221
+# export ACCENT_COLOR=0xffff2453
+
+# -- Blue Scheme --- 
+# export BAR_COLOR=0xff021254
+# export ITEM_BG_COLOR=0xff093aa8
+# export ACCENT_COLOR=0xff15bdf9
+
+# -- Green Scheme --
+# export BAR_COLOR=0xff003315
+# export ITEM_BG_COLOR=0xff008c39
+# export ACCENT_COLOR=0xff1dfca1
 
 
+# -- Orange Scheme --
+# export BAR_COLOR=0xff381c02
+# export ITEM_BG_COLOR=0xff99440a
+# export ACCENT_COLOR=0xfff97716
+
+# -- Yellow Scheme --
+# export BAR_COLOR=0xff2d2b02
+# export ITEM_BG_COLOR=0xff8e7e0a
+# export ACCENT_COLOR=0xfff7fc17
