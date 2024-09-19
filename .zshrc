@@ -9,10 +9,10 @@ tmux="TERM=screen-256color-bce tmux"
 export PATH=$HOME/bin:/usr/local/bin:.:$PATH
 export PATH=/Users/amer/.local/bin:$PATH
 export PATH=${PATH}:/usr/local/mysql-8.0.32-macos13-arm64/bin
-export PATH=/opt/homebrew/anaconda3/bin:$PATH
+export PATH="/opt/homebrew/anaconda3/bin:$PATH"
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export PATH=$PATH:/Users/amer/.spicetify
 export PATH=$PATH:/Users/amer/.cargo/bin
-#eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(fzf --zsh)"
@@ -29,7 +29,8 @@ source ~/scripts/fzf-git.sh
 
 
 # Aliases
-
+alias emacs=nvim
+alias fonts='wezterm ls-fonts --list-system | fzf'
 alias givepassword='security find-generic-password -wa'
 alias ipaddress='ifconfig | grep -A 5 en0 | grep "inet " | cut -f2 -d " "' # User configuration export MANPATH="/usr/local/man:$MANPATH"
 alias moo="cowsay I use Macos btw"
@@ -129,8 +130,9 @@ function zle-line-init() {
 	fi
 	return ret
 }
+
+
 zle -N zle-line-init
 export BAT_THEME=tokyonight_night
 unsetopt BEEP
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-pokeget gengar
+
