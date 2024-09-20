@@ -63,4 +63,7 @@ shift + lcmd - 7 : yabai -m window --space 7;
 
 cmd - return : open -na /Applications/WezTerm.app
 
+#cmd - return : open -na /Applications/Ghostty.app
+
+
 

@@ -15,8 +15,8 @@ yabai -m config layout bsp \
                 window_opacity_duration    0.2            \
                 active_window_opacity      1.0            \
                 normal_window_opacity      0.8            \
-             #   window_animation_duration  0.3            \
-              #  window_animation_easing ease_out_quint  \
+                window_animation_duration  0.0           \
+                window_animation_easing ease_out_quint  \
                 mouse_follows_focus on        \
                 mouse_modifier alt            \
                 mouse_action1 move            \
@@ -27,7 +27,7 @@ yabai -m config layout bsp \
 yabai -m signal --add event=space_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id)"
 
 # focus window after active display changes
-#yabai -m signal --add event=display_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id)"
+yabai -m signal --add event=display_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id)"
 
 yabai -m signal --add event=window_focused action="echo SWITCHED TO WINDOW: \$YABAI_WINDOW_ID"
 yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"

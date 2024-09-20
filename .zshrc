@@ -33,7 +33,7 @@ alias emacs=nvim
 alias fonts='wezterm ls-fonts --list-system | fzf'
 alias givepassword='security find-generic-password -wa'
 alias ipaddress='ifconfig | grep -A 5 en0 | grep "inet " | cut -f2 -d " "' # User configuration export MANPATH="/usr/local/man:$MANPATH"
-alias moo="cowsay I use Macos btw"
+alias moo="cowsay I use macOS btw"
 alias kys="sudo shutdown -h now"
 alias todolist='ultralist list'
 alias f="fastfetch"
