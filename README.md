@@ -1,8 +1,10 @@
-# Welcome to my (mostly) macOS setup
+# My macOS Setup
 
-Hello there, and welcome to my config. I am not the biggest macOS fan, but my config makes it much more enjoyable. I use Yabai, a tiling window manager that fixes all of the issues that macOS has regarding window management. My setup resembles that of an i3 setup, as the keybindings are identical.
-The bar is called Sketchybar, which is highly customizable. My current setup is a fork of Felix Kratz's bar. If you have any questions or need help setting up anything, you can add me on Discord as "_a1mer" and I'll gladly help you.
+Welcome! This is my personal macOS configuration, designed to improve the experience with tools that make window management a breeze. I use **Yabai**, a tiling window manager, to replicate an i3-like setup with identical keybindings. For the bar, I’ve customized **Sketchybar**, based on Felix Kratz's fork.
 
-As for my text editor, I use Neovim and Tmux (Neovim has its own repository).
-My terminal is Wezterm
-![image](https://github.com/AMulabeg/dots/assets/114394694/aa7a0edb-eb99-46ae-96f8-f17b67dc1860)
+Text editing is handled with **Neovim** (in its own repo) and **Tmux**, while **Wezterm** serves as my terminal.
+
+Need help? Reach out on Discord: "_a1mer."
+
+<img width="1680" alt="image" src="https://github.com/user-attachments/assets/73d5c17e-596b-4396-9309-2d604c803ca0">
+
