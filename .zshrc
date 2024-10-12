@@ -1,9 +1,5 @@
 export EDITOR="nvim"
-#
-# if [[ -f "/opt/homebrew/bin/brew" ]] then
-#   eval "$(/opt/homebrew/bin/brew shellenv)"
-# fi
-#
+
 tmux="TERM=screen-256color-bce tmux"
 
 export PATH=$HOME/bin:/usr/local/bin:.:$PATH
@@ -21,6 +17,7 @@ source ~/scripts/fzf-tab/fzf-tab.plugin.zsh
 source ~/scripts/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source ~/scripts/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source ~/scripts/sudo.plugin.zsh
+source ~/scripts/git.plugin.zsh
 emulate sh -c 'source ~/.profile'
 autoload -U compinit && compinit
 alias fsb='~/scripts/fsb.sh'
@@ -29,7 +26,7 @@ source ~/scripts/fzf-git.sh
 
 
 # Aliases
-alias emacs=nvim
+alias weather='curl wttr.in/Berlin'
 alias fonts='wezterm ls-fonts --list-system | fzf'
 alias givepassword='security find-generic-password -wa'
 alias ipaddress='ifconfig | grep -A 5 en0 | grep "inet " | cut -f2 -d " "' # User configuration export MANPATH="/usr/local/man:$MANPATH"
@@ -136,3 +133,5 @@ zle -N zle-line-init
 export BAT_THEME=tokyonight_night
 unsetopt BEEP
 
+
+[ -f "/Users/amer/.ghcup/env" ] && . "/Users/amer/.ghcup/env" # ghcup-env

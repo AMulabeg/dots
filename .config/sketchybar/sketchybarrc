@@ -61,7 +61,7 @@ source $ITEM_DIR/front_app.sh
 # -- Right Side Items --
 source $ITEM_DIR/calendar.sh
 source $ITEM_DIR/volume.sh
- source $ITEM_DIR/battery.sh
+source $ITEM_DIR/battery.sh
 source $ITEM_DIR/power.sh
 source $ITEM_DIR/cpu.sh
 source $ITEM_DIR/vpn.sh

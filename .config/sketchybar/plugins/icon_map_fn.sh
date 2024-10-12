@@ -34,7 +34,7 @@ function icon_map() {
   "Joplin")
     icon_result=":joplin:"
     ;;
-  "Discord" | "Discord Canary" | "Discord PTB")
+  "Discord" | "Discord Canary" | "Discord PTB" | "Vesktop")
     icon_result=":discord:"
     ;;
   "Logseq")
