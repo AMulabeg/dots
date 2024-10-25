@@ -1,141 +1,20 @@
-# Order of modules on prompt
 format = """
- $all 
-"""
-right_format = """$time"""
-# $time\
-# $hostname\
-# $directory\
-# $aws\
-# $gcloud\
-# $singularity\
-# $kubernetes\
-# $docker_context\
-# (↓ Source control - for right side ↓)\
-# $hg_branch\
-# $git_branch\
-# $git_commit\
-# $git_status\
-# $git_state\
-# (↑ Source control - for right side ↑)\
-# (↓ Toolchain version modules ↓)\
-# $crystal\
-# $dart\
-# $dotnet\
-# $elixir\
-# $elm\
-# $erlang\
-# $golang\
-# $java\
-# $lua\
-# $julia\
-# $nim\
-# $nodejs\
-# $ocaml\
-# $perl\
-# $php\
-# $purescript\
-# $python\
-# $ruby\
-# $rust\
-# $swift\
-# $terraform\
-# $zig\
-# (↑ Toolchain version modules ↑)\
-# (↓ Package modules ↓)\
-# $helm\
-# $package\
-# $cmake\
-# $conda\
-# (↑ Package modules ↑)\
-# $nix_shell\
-# $memory_usage\
-# $env_var\
-# $custom\
-# (↑ above input line ↑)\
-# $line_break\
-# (↓ on input line ↓)\
-# $battery\
-# $shlvl\
-# $jobs\
-# $cmd_duration\
-# $status\
-# $character"""
+[$directory](bold cyan)($git_branch$git_state$git_status$git_metrics)
+$time $hostname $username $python[»](bold green) """
 
-
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~     DIRECTORY     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
-[directory]
-style = "fg:#6A8AEA"
-truncation_length = 4
-truncate_to_repo = true
-fish_style_pwd_dir_length = 3
-
-[directory.substitutions]
-"Documents" = " 󰧮 "
-"Music" = "  "
-"Movies" = " 󰿏 "
-"Pictures" = " "
-"Sources" = "  "
-"Downloads" = "  "
-# "~" = "  "
-"~" = ""
-"/" = "  "
-
-[line_break]
-disabled = true # leave as TRUE  
-
-[character]
-success_symbol = "[󰁔](fg:#6A8AEA)"
-error_symbol = "[](fg:#d56767)[ ](fg:#d56767) "
-format = "$symbol"
-disabled = false
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~     ...........       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
-
-
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~ GIT ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 [git_branch]
-disabled = false
-symbol = " "
-style = "fg:#a48989"
-truncation_length = 5                                 # length == ABCDE
-format = '[$symbol$branch(:$remote_branch)]($style) ' # this sets path ../../../../
-
-[git_commit]
-disabled = false
-commit_hash_length = 1
-
-[git_state]
-disabled = false
-rebase = "rebasing"
-merge = "merging"
-revert = "reverting"
-cherry_pick = " picking"
-bisect = "bisecting"
-am = "am'ing"
-am_or_rebase = "am/rebase"
+style = "bold green"
+format = "[\\[[$symbol$branch$tag](bold green)\\]](bold white)"
+symbol = "\ue725 "
 
 [git_status]
-disabled = false
-style = "fg:#5F8575"
-stashed = " ${count} "
-ahead = "󰞙 ${count} "
-behind = "󰞒 ${count} "
-diverged = "󰵉 ${ahead_count} ${behind_count} "
-conflicted = " ${count} "
-deleted = " ${count} "
-renamed = " ${count} "
-modified = " ${count} "
-staged = " ${count} "
-untracked = "󱅘 ${count} "
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~     ...........       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+format = ' ([\[$conflicted$deleted$renamed$modified$staged$untracked$ahead_behind\]]($style))'
 
-
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~     LANGUAGES     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
-[java]
-disabled = false
-symbol = "•  "
-format = '[${symbol}]($style)'
-style = "fg:#a48989"
+[directory]
+style = "bold cyan"
+truncate_to_repo = false
+truncation_length = 1
+fish_style_pwd_dir_length = 1
 
 [python]
 disabled = false
@@ -144,6 +23,13 @@ python_binary = 'python'
 format = '[${symbol}(\($virtualenv\))]($style)'
 style = "fg:#a48989"
 symbol = "• 󱔎 "
+
+
+[java]
+disabled = false
+symbol = "•  "
+format = '[${symbol}]($style)'
+style = "fg:#a48989"
 
 [lua]
 disabled = false
@@ -176,14 +62,23 @@ disabled = false
 symbol = "• 󰰠 "
 format = '[${symbol}]($style)'
 style = "fg:#a48989"
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~     ...........       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+[ruby]
+disabled = true
 
+[swift]
+disabled = true
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~     CMD-DURATION     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
-[cmd_duration]
+[hostname]
+ssh_only = false
+format = "[$hostname]($style)"
+style = "bold white"
+
+[username]
+show_always = true
+style_user = "bold white"
+format = "[$user]($style)"
+
+[time]
 disabled = false
-min_time = 2_000
-show_milliseconds = false
-show_notifications = false
-min_time_to_notify = 45_000
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~     ...........       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+format = "[$time]($style)"
+time_format = "%H:%M"
