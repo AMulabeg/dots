@@ -9,6 +9,7 @@ export PATH="/opt/homebrew/anaconda3/bin:$PATH"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export PATH=$PATH:/Users/amer/.spicetify
 export PATH=$PATH:/Users/amer/.cargo/bin
+
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(fzf --zsh)"
@@ -52,6 +53,7 @@ alias thu="ultralist l group:project due:thu"
 alias fri="ultralist l group:project due:fri"
 alias c="ultralist l completed:tod"
 alias s='sesh connect $(sesh list | fzf)'
+alias o='cd ~/Documents/Obsidian Vault'
 alias rebuild=" darwin-rebuild switch --flake ~/.config/nix-darwin#snow"
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
@@ -73,7 +75,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 alias uf="script -c \"ultralist l\"  < /dev/null | fzf --ansi"
-
+bindkey -e
 # Haskell
 [ -f "/Users/amer/.ghcup/env" ] && source "/Users/amer/.ghcup/env" # ghcup-envexport PATH=/opt/homebrew/anaconda3/bin:/usr/local/anaconda3/bin:/Users/amer/.local/bin:/Users/amer/bin:/usr/local/bin:.:/Users/amer/.local/bin:/Users/amer/bin:/usr/local/bin:.:/opt/homebrew/bin:/opt/homebrew/sbin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/TeX/texbin:/Applications/VMware Fusion.app/Contents/Public:/usr/local/share/dotnet:~/.dotnet/tools:/Users/amer/Library/Application Support/JetBrains/Toolbox/scripts:/usr/local/mysql-8.0.32-macos13-arm64/bin:/usr/local/mysql-8.0.32-macos13-arm64/bin >> ~/.zshrc
 emulate sh -c 'source ~/.profile'
