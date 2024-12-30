@@ -4,11 +4,10 @@ sudo yabai --load-sa
 sudo nvram boot-args=-arm64e_preview_abi
 
 yabai -m config layout bsp \
-                external_bar all:0:32 \
                 window_placement second_child \
                 top_padding 8 \
                 bottom_padding 8 \
-                left_padding 8 \
+                left_padding 8\
                 right_padding 8 \
                 window_gap 4 \
                 window_opacity             off           \
@@ -21,7 +20,7 @@ yabai -m config layout bsp \
                 mouse_modifier alt            \
                 mouse_action1 move            \
                 mouse_action2 resize          \
-                window_shadow off   \
+                window_shadow on   \
                 focus_follows_mouse autofocus
 
 # focus window after active space changes
@@ -37,3 +36,4 @@ yabai -m signal --add event=window_destroyed action="sketchybar --trigger window
 
 yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus first"
 yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus recent || yabai -m window --focus first"
+borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0 &

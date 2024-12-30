@@ -1,7 +1,7 @@
 export EDITOR="nvim"
+# Ghostty shell integration for Bash. This must be at the top of your bashrc!
 
 tmux="TERM=screen-256color-bce tmux"
-
 export PATH=$HOME/bin:/usr/local/bin:.:$PATH
 export PATH=/Users/amer/.local/bin:$PATH
 export PATH=${PATH}:/usr/local/mysql-8.0.32-macos13-arm64/bin
@@ -36,7 +36,7 @@ alias kys="sudo shutdown -h now"
 alias todolist='ultralist list'
 alias f="fastfetch"
 alias b="brew"
-alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias ls="eza --color=always --git --no-filesize --no-time --no-user --no-permissions"
 alias oo="cd ~/Documents/Obsidian Vault"
 alias "pirates"="ani-cli one piece"
 alias y="yazi"
@@ -54,6 +54,7 @@ alias fri="ultralist l group:project due:fri"
 alias c="ultralist l completed:tod"
 alias s='sesh connect $(sesh list | fzf)'
 alias o='cd ~/Documents/Obsidian Vault'
+alias ':q!'='tmux detach' 
 alias rebuild=" darwin-rebuild switch --flake ~/.config/nix-darwin#snow"
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
@@ -101,7 +102,6 @@ export FZF_DEFAULT_OPTS=" \
 --color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
 --color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796"
 
-eval "$(starship init zsh)"
 
 TRANSIENT_PROMPT=`starship module character`
 function zle-line-init() {
