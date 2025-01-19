@@ -4,6 +4,7 @@ sudo yabai --load-sa
 sudo nvram boot-args=-arm64e_preview_abi
 
 yabai -m config layout bsp \
+                external_bar all:0:52 \
                 window_placement second_child \
                 top_padding 8 \
                 bottom_padding 8 \
@@ -20,7 +21,7 @@ yabai -m config layout bsp \
                 mouse_modifier alt            \
                 mouse_action1 move            \
                 mouse_action2 resize          \
-                window_shadow on   \
+                window_shadow off   \
                 focus_follows_mouse autofocus
 
 # focus window after active space changes
